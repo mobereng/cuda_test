@@ -1,0 +1,1 @@
+.\build\Release\CudaTest.exe
