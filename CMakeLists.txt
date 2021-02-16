@@ -4,13 +4,10 @@ project(CudaTest LANGUAGES CXX)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 # LIBIGL PACKAGE
-#option(LIBIGL_WITH_OPENGL              "Use OpenGL"         ON)
-#option(LIBIGL_WITH_OPENGL_GLFW         "Use GLFW"           ON)
-#option(LIBIGL_WITH_OPENGL_GLFW_IMGUI   "Use ImGui"          ON)
-#find_package(LIBIGL REQUIRED QUIET)
-
-# Eigen
-find_package (Eigen3 3.3 REQUIRED)
+option(LIBIGL_WITH_OPENGL              "Use OpenGL"         ON)
+option(LIBIGL_WITH_OPENGL_GLFW         "Use GLFW"           ON)
+option(LIBIGL_WITH_OPENGL_GLFW_IMGUI   "Use ImGui"          ON)
+find_package(LIBIGL REQUIRED QUIET)
 
 # BOOST PACKAGE
 find_package(Boost 1.75.0 REQUIRED COMPONENTS program_options filesystem serialization unit_test_framework)
@@ -36,14 +33,9 @@ endif()
 
 # Include
 target_include_directories(${PROJECT_NAME} PRIVATE tools/include/)
-#target_include_directories(${PROJECT_NAME} PRIVATE ${Boost_INCLUDE_DIRS} tools/include/)
-#if (CUDAToolkit_FOUND)
-#  target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CUDA_TOOLKIT_INCLUDE_DIRECTORIES})
-#endif()
 
 # Linker
-#target_link_libraries(${PROJECT_NAME} igl::core igl::opengl igl::opengl_glfw igl::opengl_glfw_imgui ${Boost_LIBRARIES} ${Boost_PROGRAM_OPTIONS_LIBRARY} ${Boost_SERIALIZATION_LIBRARY} Boost::program_options Boost::filesystem Boost::serialization Boost::unit_test_framework Eigen3::Eigen)
-target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES} ${Boost_PROGRAM_OPTIONS_LIBRARY} ${Boost_SERIALIZATION_LIBRARY} Boost::program_options Boost::filesystem Boost::serialization Boost::unit_test_framework Eigen3::Eigen)
+target_link_libraries(${PROJECT_NAME} igl::core igl::opengl igl::opengl_glfw igl::opengl_glfw_imgui ${Boost_LIBRARIES} ${Boost_PROGRAM_OPTIONS_LIBRARY} ${Boost_SERIALIZATION_LIBRARY} Boost::program_options Boost::filesystem Boost::serialization Boost::unit_test_framework)
 
 # Linker CUDA
 if (CUDAToolkit_FOUND)
