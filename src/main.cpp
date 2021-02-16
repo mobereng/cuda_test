@@ -4,6 +4,6 @@
 
 int main(int argc, char *argv[]) {
   printf("Hello World from CPU\n");
-  SparseMatrixXd A;
+  Wrapper::wrapper();
   return 0;
 }
