@@ -1,6 +1,5 @@
 #pragma once
 
-/*
 #include <igl/readOBJ.h>
 #include <igl/vertex_triangle_adjacency.h>
 #include <igl/volume.h>
@@ -25,8 +24,6 @@
 #include <igl/cat.h>
 #include <igl/barycenter.h>
 #include <igl/edge_flaps.h>
-*/
-#include <Eigen/Sparse>
 #include <boost/program_options.hpp>
 #include <boost/filesystem.hpp>
 #include <boost/algorithm/string.hpp>
