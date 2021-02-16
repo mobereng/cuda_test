@@ -18,7 +18,7 @@ As long as the dependencies are LIBIGL and BOOST, is recommended to have the fol
 mkdir cuda_test/ && cd cuda_test/
 git clone https://github.com/libigl/libigl.git
 git clone --branch boost-1.75.0 --single-branch --recursive https://github.com/boostorg/boost.git
-git clone https://gitlab.com/mesa_bg/mskeletonizer.git base
+git clone https://github.com/mobereng/cuda_test.git base
 ```
 
 ## Compile
